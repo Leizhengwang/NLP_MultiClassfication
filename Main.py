@@ -39,13 +39,7 @@ def preprocessDataAndPredict(Job_description):
     #load trained model
     trained_model = joblib.load(file)
     #predict
-    Id_to_Indus = {1: 'IT Consutlant software service',
-                   2: 'Retial manuacturing',
-                   3: 'Financial, insurance',
-                   4: 'Federal, department and law',
-                   5: 'Healthcare pharmaceutical',
-                   6: 'High Tech'}
-    prediction = Id_to_Indus[trained_model.predict(test_data)]
+    prediction = trained_model.predict(test_data)
 
     return prediction
     pass
